@@ -1,0 +1,178 @@
+:root {
+  --red: #ff7e7e;
+  --green: #91ff87;
+
+  --darkGrey: #b9b9b9;
+  --grey: #d3d3d3;
+  --lightGrey: #c2c2c2;
+
+  --textColor: #5c5c5c;
+
+  --borderRadius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--grey);
+  color: var(--textColor);
+  font-family: system-ui, 'Segeo UI', monospace;
+  margin: 0;
+}
+
+.display {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.debugOutline {
+  border: 2px dashed #ffcc00;
+}
+
+.serviceWidget {
+  padding: 15px;
+  border-radius: var(--borderRadius);
+  background-color: var(--darkGrey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statusCircle {
+  border-radius: 50%;
+  padding-top: 40%;
+  width: 40%;
+}
+
+.serviceWidgetName {
+  margin: 5px;
+}
+
+#start {
+  display: none;
+  padding: 10px;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTopBar {
+  background-color: var(--darkGrey);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  padding-left: 10px;
+  align-items: flex-end;
+}
+
+.mainContentWrap {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.mainTopBarStatusCircle {
+  width: 100px;
+  height: 100px;
+  padding-top: unset;
+  transform: translateY(30%);
+}
+
+.topBarText {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.box {
+  background-color: var(--darkGrey);
+  border-radius: var(--borderRadius);
+  padding: 10px;
+  display: flex;
+}
+
+.mainBox {
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.stopBox {
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+.boxPath {
+  background-color: var(--lightGrey);
+  margin-left: 10px;
+  margin-right: 10px;
+  width: inherit;
+}
+
+.twoColumnGridList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.gridBox {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gridBoxLeft {
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--darkGrey);
+  border-bottom: 0.2px solid var(--textColor);
+}
+
+.gridBoxRight {
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--lightGrey);
+  border-bottom: 0.2px solid var(--textColor);
+}
+
+.editor {
+  height: 200px;
+  background-color: #272822;
+}
+
+.buttonBox {
+  flex-wrap: wrap;
+}
+
+.button {
+  margin: 3px;
+  background-color: var(--lightGrey);
+  border: none;
+  border-radius: 0;
+  color: unset;
+  padding: 10px;
+  font-size: 120%;
+}
+
+/* COLORS */
+
+.backgroundGreen {
+  background-color: var(--green);
+}
+
+.backgroundRed {
+  background-color: var(--red);
+}
+
+.backgroundLightGrey {
+  background-color: var(--lightGrey);
+}
