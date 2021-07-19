@@ -1,118 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service Management</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="display twoColumnGridList" id="start">
-        <div class="serviceWidget">
-            <div class="statusCircle backgroundRed"></div>
-            <h3 class="serviceWidgetName">Hallo</h3>
-        </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hidden">
+      <div class="serviceWidget">
+        <div class="statusCircle"></div>
+        <h3 class="serviceWidgetName"></h3>
+      </div>
 
-        <div class="serviceWidget">
-            <div class="statusCircle backgroundGreen"></div>
-            <h3 class="serviceWidgetName">Hallo</h3>
-        </div>
+      <div class="box gridBoxLeft">
+        <a></a>
+      </div>
+      <div class="box gridBoxRight">
+        <a></a>
+      </div>
 
-        <div class="serviceWidget">
-            <div class="statusCircle backgroundGreen"></div>
-            <h3 class="serviceWidgetName">Hallo</h3>
-        </div>
-
-        <div class="serviceWidget">
-            <div class="statusCircle backgroundGreen"></div>
-            <h3 class="serviceWidgetName">Hallo</h3>
-        </div>
+      <button class="button"></button>
     </div>
+    <div class="display twoColumnGridList" id="start"></div>
 
     <div class="display flexColumn" id="main">
-        <div class="mainTopBar">
-            <div class="statusCircle backgroundGreen mainTopBarStatusCircle"></div>
-            <h1 class="topBarText">Pixel</h1>
+      <div class="mainTopBar">
+        <div
+          class="statusCircle backgroundGreen mainTopBarStatusCircle"
+          id="mainServiceStatus"
+        ></div>
+        <h1 class="topBarText textWrap" id="mainServiceName"></h1>
+        <button
+          class="button backButton"
+          onclick="prepareStartScreen(); showScreen('start')"
+        >
+          Back
+        </button>
+      </div>
+      <div class="mainContentWrap">
+        <div class="box mainBox">
+          <img src="stop.svg" class="icon" id="mainStatusControl" />
+          <div class="box boxPath" id="mainServicePath">
+            <a></a>
+          </div>
         </div>
-        <div class="mainContentWrap">
-            <div class="box mainBox">
-                <div class="box backgroundRed stopBox"></div>
-                <div class="box boxPath">
-                    <a>D:/Dev/AAAA/höalfa</a>
-                </div>
-            </div>
-            <div class="box mainBox twoColumnGridList gridBox">
-                <div class="box gridBoxLeft">
-                   <a>Time</a>
-                </div>
-                <div class="box gridBoxRight">
-                    <a>0.543s</a>
-                </div>
-                <div class="box gridBoxLeft">
-                    <a>Time</a>
-                </div>
-                <div class="box gridBoxRight">
-                    <a>0.543s</a>
-                </div>
-            </div>
-            <div class="box mainBox editor" id="editorJson">
-{
-    "JSON": true
-}
-            </div>
-            <div class="box mainBox editor" id="editorLog">
-[5:50:53] Log output
-[5:51:54] Log output 2
-            </div>
-            <div class="box mainBox buttonBox">
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                <button class="button">
-                    Reset
-                </button>
-                
-            </div>
-        </div>
+        <div
+          class="box mainBox twoColumnGridList gridBox"
+          id="mainInfoTable"
+        ></div>
+        <div class="box mainBox editor" id="editorConfig"></div>
+        <div class="box mainBox editor" id="editorLog"></div>
+        <div class="box mainBox buttonBox"></div>
+      </div>
     </div>
-    <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script
+      src="ace-builds/src-noconflict/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socketHandler.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

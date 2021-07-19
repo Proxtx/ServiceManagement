@@ -1,0 +1,7 @@
+{
+  "ServiceManagement": {
+    "path": "D:/Dev/Node/ServiceManagement",
+    "run": "Don't run this service.",
+    "config": "services.json"
+  }
+}

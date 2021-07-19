@@ -18,8 +18,12 @@
 body {
   background-color: var(--grey);
   color: var(--textColor);
-  font-family: system-ui, 'Segeo UI', monospace;
+  font-family: system-ui, "Segeo UI", monospace;
   margin: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .display {
@@ -39,6 +43,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .statusCircle {
@@ -54,6 +61,11 @@ body {
 #start {
   display: none;
   padding: 10px;
+}
+
+#main {
+  display: none;
+  width: 100%;
 }
 
 .flexColumn {
@@ -103,12 +115,6 @@ body {
   width: 100%;
   margin-top: 20px;
   align-items: center;
-}
-
-.stopBox {
-  border-radius: 3px;
-  width: 30px;
-  height: 30px;
 }
 
 .boxPath {
@@ -161,6 +167,16 @@ body {
   color: unset;
   padding: 10px;
   font-size: 120%;
+}
+
+.backButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.textWrap {
+  width: 1px;
 }
 
 /* COLORS */
