@@ -75,6 +75,7 @@ typings/
 # config json
 
 config.json
+services.json
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

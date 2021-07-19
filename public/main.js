@@ -66,6 +66,8 @@ const prepareStartScreen = async () => {
   }
 };
 
+let saveConfig = false;
+
 const genServiceScreen = async (service) => {
   const serviceInfo = await Fetch("api/service/service", {
     name: service,
@@ -115,6 +117,11 @@ const genServiceScreen = async (service) => {
   }
   if (config.success) {
     editorConfig.setValue(config.text, 1);
+    if (config.exists) {
+      saveConfig = true;
+    } else {
+      saveConfig = false;
+    }
   }
   if (log.success) {
     editorLog.setValue(log.log, 1);
@@ -178,6 +185,7 @@ const viewService = (name) => {
 let currentSaveNumber = 000;
 
 const saveTimeout = async () => {
+  if (!saveConfig) return;
   const saveNumber = Math.floor(Math.random() * 100000);
   currentSaveNumber = saveNumber;
   await new Promise((resolve) => setTimeout(resolve, 2000));
