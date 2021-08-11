@@ -1,7 +1,0 @@
-POST http://localhost/api/service/services
-content-type: application/json
-
-{
-    "name": "test2",
-    "config": "{\"hello\": \"hello\"}"
-}

@@ -18,13 +18,25 @@ export const getConfig = async (name) => {
 };
 
 export const setConfig = async (name, config) => {
-  await new Promise((resolve) => {
-    fs.writeFile(
-      services[name].path + "/" + (services[name].config || "config.json"),
-      config,
-      resolve
-    );
-  });
+  const path =
+    services[name].path + "/" + (services[name].config || "config.json");
+  let exists = false;
+
+  await new Promise((resolve) =>
+    fs.access(path, fs.F_OK, (err) => {
+      if (err) {
+        resolve();
+        return;
+      }
+      exists = true;
+      resolve();
+    })
+  );
+
+  if (exists)
+    await new Promise((resolve) => {
+      fs.writeFile(path, config, resolve);
+    });
 
   return { success: true };
 };
