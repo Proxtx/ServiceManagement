@@ -22,7 +22,10 @@ const appendServices = (name) => {
   processes[name].stderr.on("data", (data) =>
     logListener(name, stripColor(data.toString()))
   );
-  processes[name].addListener("close", stopService.bind({}, name));
+  processes[name].addListener("close", async () => {
+    await stopService.bind({}, name);
+    services[name].autoRestart && startService(name);
+  });
 };
 
 export const stopService = async (name) => {
