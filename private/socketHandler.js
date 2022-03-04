@@ -72,7 +72,12 @@ const updateOverview = async (combine, options) => {
 };
 
 const infoQuery = async (service) => {
-  let result = JSON.parse(JSON.stringify(service));
+  let result = JSON.parse(
+    JSON.stringify(service, (key, value) => {
+      if (key == "git") return undefined;
+      return value;
+    })
+  );
   delete result.events;
   delete result.service.combineInfo;
   let process = {};

@@ -93,6 +93,7 @@ class Service {
       this.config = JSON.parse(await fs.readFile(configPath, "utf-8"));
     } catch (e) {
       console.log(e);
+      return "";
     }
     return this.config;
   };
