@@ -104,7 +104,7 @@ class Service {
       : this.service.path + "/config.json";
     try {
       JSON.parse(config);
-      await fs.readFile(configPath, "utf-8");
+      await fs.stat(configPath, "utf-8");
       await fs.writeFile(configPath, config);
     } catch {}
   };
