@@ -51,10 +51,14 @@ class Service {
     }
 
     if (this.git) {
-      let res = await this.git.pull();
-      if (res.changes > 0 && this.process) {
-        await this.process.kill();
-        this.start();
+      try {
+        let res = await this.git.pull();
+        if (res.changes > 0 && this.process) {
+          await this.process.kill();
+          this.start();
+        }
+      } catch (e) {
+        console.log(e);
       }
     }
 
