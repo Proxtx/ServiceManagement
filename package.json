@@ -1,6 +1,6 @@
 {
   "name": "servicemanagement",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "main.js",
   "type": "module",
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/Proxtx/ServiceManagement#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1",
-    "socket.io": "^4.1.3",
-    "strip-color": "^0.1.0"
+    "@proxtx/config": "^1.0.2",
+    "@proxtx/framework": "^1.2.2",
+    "node-fetch": "^3.2.1",
+    "simple-git": "^3.2.6",
+    "strip-color": "^0.1.0",
+    "ws": "^8.5.0"
   }
 }

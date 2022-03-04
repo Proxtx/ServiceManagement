@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>ServiceManagement</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hidden">
+      <div class="box serviceWidget">
+        <div class="circle"></div>
+        <h3></h3>
+      </div>
+    </div>
+    <div class="titleBar">
+      <h1>Service Management</h1>
+    </div>
+    <div class="contentWrap">
+      <div class="box">
+        <button class="button" onclick="window.location = './logs/'">
+          Logs
+        </button>
+        <button
+          class="button"
+          onclick=" document.cookie = 'pwd=false'; window.location = window.location;"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+    <div class="contentWrap" id="content"></div>
+    <script src="private/render/login.js" class="server"></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

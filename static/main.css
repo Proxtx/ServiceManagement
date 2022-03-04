@@ -1,0 +1,102 @@
+:root {
+  --red: #ff7e7e;
+  --green: #91ff87;
+
+  --darkGrey: #b9b9b9;
+  --grey: #d3d3d3;
+  --lightGrey: #c2c2c2;
+
+  --textColor: #5c5c5c;
+
+  --borderRadius: 8px;
+
+  --fontFamily: system-ui, "Segeo UI", monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--fontFamily);
+  background-color: var(--grey);
+  color: var(--textColor);
+}
+
+.titleBar {
+  width: 100%;
+  height: 100px;
+  background-color: var(--darkGrey);
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.circle {
+  background-color: var(--green);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  height: 60px;
+}
+
+.text {
+  color: var(--textColor);
+}
+
+.box {
+  background-color: var(--darkGrey);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.contentWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+  gap: 15px;
+}
+
+.editorWrap {
+  padding: 0;
+  display: unset;
+}
+
+.editor {
+  min-height: 200px;
+  height: 100%;
+}
+
+.button {
+  color: var(--textColor);
+  background-color: var(--lightGrey);
+  border: 0;
+  font-size: 120%;
+  padding: 10px;
+}
+
+.input {
+  color: var(--textColor);
+  background-color: var(--lightGrey);
+  border: 0;
+  font-size: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}

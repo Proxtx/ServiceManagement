@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hidden">
+      <button class="button">Test</button>
+    </div>
+    <div class="titleBar">
+      <div class="circle" id="statusCircle"></div>
+      <h1 id="serviceName">main_server</h1>
+    </div>
+    <div class="contentWrap">
+      <div class="box">
+        <img src="play.svg" id="startStop" />
+        <div class="box" id="path"></div>
+      </div>
+      <div class="box" id="dataTable"></div>
+      <div class="box editorWrap">
+        <div class="editor" id="configEditor"></div>
+      </div>
+      <div class="box editorWrap">
+        <div class="editor" id="logEditor"></div>
+      </div>
+      <div class="box" id="buttons"></div>
+    </div>
+    <script
+      src="/ace-builds/src-noconflict/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="main.js" type="module"></script>
+    <script src="private/render/login.js" class="server"></script>
+    <script src="private/render/service.js" class="server"></script>
+  </body>
+</html>

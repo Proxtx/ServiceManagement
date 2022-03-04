@@ -1,32 +1,33 @@
-import express from "express";
+import { listen } from "@proxtx/framework";
+import config from "@proxtx/config";
+import { service, overview, logs } from "./private/socketHandler.js";
+import process from "process";
 
-const app = express();
-import http from "http";
-const server = http.createServer(app);
-import { Server } from "socket.io";
-const io = new Server(server);
+process.setMaxListeners(100);
 
-import { router as configRouter } from "./router/configRouter.js";
-import { router as logRouter } from "./router/logRouter.js";
-import { router as serviceRouter } from "./router/serviceRouter.js";
-import { router as buttonRouter } from "./router/buttonRouter.js";
+const result = await listen(config.port);
 
-import * as socketHandler from "./modules/socketHandler.js";
-import { showReloadButton } from "./modules/button.js";
-
-process.on("uncaughtException", function (err) {
-  console.log(err);
+const handler = await result.combineHandler(result.server);
+handler.onCombine("service", async (combine, options) => {
+  try {
+    await service(combine, options);
+  } catch (e) {
+    console.log(e);
+  }
+});
+handler.onCombine("overview", async (combine, options) => {
+  try {
+    await overview(combine, options);
+  } catch (e) {
+    console.log(e);
+  }
+});
+handler.onCombine("logs", async (combine, options) => {
+  try {
+    await logs(combine, options);
+  } catch (e) {
+    console.log(e);
+  }
 });
 
-app.use("", express.static("public"));
-app.use(express.json());
-
-app.use("/api/config", configRouter);
-app.use("/api/log", logRouter);
-app.use("/api/service", serviceRouter);
-app.use("/api/button", buttonRouter);
-
-socketHandler.init(io);
-server.listen(process.argv[2] || 80);
-
-showReloadButton();
+console.log("Server Started. Port:", config.port);

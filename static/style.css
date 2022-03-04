@@ -1,0 +1,7 @@
+.serviceWidget {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 7.5px);
+  max-width: 200px;
+}
