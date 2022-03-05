@@ -49,7 +49,11 @@ export const logs = async (combine, options) => {
   await combine.sendLogs(logsList);
   serviceEvents.addEventListener("log", async (log, service) => {
     if (!options.connected) return;
-    await combine.newLog(log, service);
+    await combine.newLog(
+      log,
+      service.service.name,
+      service.process ? service.process.log : log
+    );
     return true;
   });
 };

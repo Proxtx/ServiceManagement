@@ -4,27 +4,19 @@ let logs = [];
 
 export const sendLogs = (logsList) => {
   for (let i of logsList) {
-    let res = createLog(i.service.name, i.process ? i.process.log : "");
+    let res = createLog(i.name, i.log);
     logs.push(res);
   }
 };
 
-export const newLog = (log, service) => {
-  if (
-    logs[logs.length - 1] &&
-    logs[logs.length - 1].name == service.service.name
-  )
+export const newLog = (log, name, fullLog) => {
+  if (logs[logs.length - 1] && logs[logs.length - 1].name == name)
     logs[logs.length - 1].ace.setValue(
       logs[logs.length - 1].ace.getValue() + log,
       1
     );
   else {
-    logs.push(
-      createLog(
-        service.service.name,
-        service.process ? service.process.log : ""
-      )
-    );
+    logs.push(createLog(name, fullLog));
   }
 };
 

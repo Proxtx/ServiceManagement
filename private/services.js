@@ -13,7 +13,17 @@ export let logs = [];
 export let servicesFile;
 
 const addToLog = (log, service) => {
-  if (logs[logs.length - 1] != service) logs.push(service);
+  if (
+    !logs[logs.length - 1] ||
+    logs[logs.length - 1].name != service.service.name
+  )
+    logs.push({
+      name: service.service.name,
+      log: service.process ? service.process.log : "",
+    });
+  else {
+    logs[logs.length - 1].log += log;
+  }
   if (logs.length > 20) logs.shift();
   return true;
 };
