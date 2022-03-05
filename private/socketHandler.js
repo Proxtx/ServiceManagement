@@ -46,7 +46,6 @@ export const overview = async (combine, options) => {
 };
 export const logs = async (combine, options) => {
   if ((await combine.pwd) != config.pwd) return;
-  await combine.sendLogs(logsList);
   serviceEvents.addEventListener("log", async (log, service) => {
     if (!options.connected) return;
     await combine.newLog(

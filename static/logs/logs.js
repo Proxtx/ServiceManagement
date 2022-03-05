@@ -1,8 +1,10 @@
 export const pwd = cookie.pwd;
+const server = await framework.load("log.js");
 
 let logs = [];
 
-export const sendLogs = (logsList) => {
+const parseLogs = (logsList) => {
+  console.log(logsList);
   for (let i of logsList) {
     let res = createLog(i.name, i.log);
     logs.push(res);
@@ -21,6 +23,7 @@ export const newLog = (log, name, fullLog) => {
 };
 
 const createLog = (name, log) => {
+  if (!log) return;
   let box = document.createElement("div");
   box.setAttribute("class", "box editorWrap editorPadding");
   let editorId = "editor" + Math.floor(Math.random() * 100000);
@@ -46,3 +49,5 @@ const createLog = (name, log) => {
 
   return { element: box, ace: logEditor, name };
 };
+
+parseLogs(await server.getLogs(pwd));
