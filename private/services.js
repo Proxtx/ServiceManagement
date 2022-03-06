@@ -162,8 +162,9 @@ class Service {
   };
 
   getButtons = async () => {
-    let buttons = ["Clear Logs", "Edit Combine"];
+    let buttons = ["Clear Logs"];
     if (this.service.combineInfo) {
+      buttons.push("Edit Combine");
       for (let i of this.service.combineInfo) {
         for (let r of Object.keys(i.exports)) {
           buttons.push(i.name + " " + r);
