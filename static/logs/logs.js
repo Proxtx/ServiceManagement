@@ -4,7 +4,6 @@ const server = await framework.load("log.js");
 let logs = [];
 
 const parseLogs = (logsList) => {
-  console.log(logsList);
   for (let i of logsList) {
     let res = createLog(i.name, i.log);
     logs.push(res);
