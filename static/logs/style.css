@@ -1,7 +1,7 @@
 .logEditor {
   height: 200px;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
 }
 
 .editorPadding {

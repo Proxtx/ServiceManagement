@@ -8,7 +8,7 @@
 
   --textColor: #5c5c5c;
 
-  --borderRadius: 8px;
+  --borderRadius: 4px;
 
   --fontFamily: system-ui, "Segeo UI", monospace;
 }
@@ -55,7 +55,7 @@ body {
 
 .box {
   background-color: var(--darkGrey);
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
   padding: 12px;
   display: flex;
   flex-direction: row;
@@ -98,5 +98,5 @@ body {
   border: 0;
   font-size: 100%;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
 }
