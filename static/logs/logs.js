@@ -24,14 +24,14 @@ export const newLog = (log, name, fullLog) => {
 const createLog = (name, log) => {
   if (!log) return;
   let box = document.createElement("div");
-  box.addEventListener("click", () => {
-    cookie.service = name;
-    window.location = "../service";
-  });
   box.setAttribute("class", "box editorWrap editorPadding");
   let editorId = "editor" + Math.floor(Math.random() * 100000);
   let nameElem = document.createElement("h3");
   nameElem.innerText = name;
+  nameElem.addEventListener("click", () => {
+    cookie.service = name;
+    window.location = "../service";
+  });
   box.appendChild(nameElem);
   let editorWrap = document.createElement("div");
   let editor = document.createElement("div");
