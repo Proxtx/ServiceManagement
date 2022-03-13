@@ -2,7 +2,7 @@
 
 Manage you services like node apps, python scripts or anything else with this project
 
-# New in 2.0
+# New in 2.0 Complete Rework
 
 - Builds on framework
 - Display all Logs
