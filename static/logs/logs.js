@@ -7,6 +7,9 @@ const parseLogs = (logsList) => {
   for (let i of logsList) {
     let res = createLog(i.name, i.log);
     logs.push(res);
+    res.ace.renderer.on("afterRender", () => {
+      res.ace.scrollToLine(Infinity);
+    });
   }
 };
 
@@ -19,6 +22,7 @@ export const newLog = (log, name, fullLog) => {
   else {
     logs.push(createLog(name, fullLog));
   }
+  logs[logs.length - 1].ace.scrollToLine(Infinity);
 };
 
 const createLog = (name, log) => {

@@ -36,6 +36,7 @@ const reloadServices = async () => {
     if (!services[i]) services[i] = new Service(servicesFile[i], i);
     services[i].service = { ...services[i].service, ...servicesFile[i] };
   }
+  for (let i of Object.keys(services)) if (!servicesFile[i]) delete services[i];
   events.evoke("update");
   setTimeout(reloadServices, 20000);
 };

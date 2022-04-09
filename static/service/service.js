@@ -11,6 +11,7 @@ export const updateRunningStatus = (status) => {
 
 export const logMessage = (log) => {
   logEditor.setValue(logEditor.getValue() + log, 1);
+  logEditor.scrollToLine(Infinity);
 };
 
 export const displayInfo = (info) => {
