@@ -62,6 +62,8 @@ let logEditor = ace.edit("logEditor");
 logEditor.setTheme("ace/theme/monokai");
 logEditor.session.setMode("ace/mode/text");
 logEditor.setReadOnly(true);
+logEditor.resize(true);
+logEditor.scrollToLine(Infinity);
 
 window.logEditor = logEditor;
 

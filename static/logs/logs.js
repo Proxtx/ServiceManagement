@@ -7,9 +7,8 @@ const parseLogs = (logsList) => {
   for (let i of logsList) {
     let res = createLog(i.name, i.log);
     logs.push(res);
-    res.ace.renderer.on("afterRender", () => {
-      res.ace.scrollToLine(Infinity);
-    });
+    res.ace.resize(true);
+    res.ace.scrollToLine(Infinity);
   }
 };
 

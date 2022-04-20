@@ -1,3 +1,18 @@
 {
-  "pwd": "YOUR_SECURE_PASSWORD"
+  "pwd": "YOUR_SECURE_PASSWORD",
+  "port": 80,
+  "style": {
+    "red": "#ff7e7e",
+    "green": "#91ff87",
+
+    "darkGrey": "#b9b9b9",
+    "grey": "#d3d3d3",
+    "lightGrey": "#c2c2c2",
+
+    "textColor": "#5c5c5c",
+
+    "borderRadius": "4px",
+
+    "fontFamily": "system-ui, \"Segeo UI\", monospace"
+  }
 }
