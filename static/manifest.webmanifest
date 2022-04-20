@@ -1,7 +1,7 @@
 {
   "background_color": "#b9b9b9",
   "description": "Manage your Services",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "name": "Service Management",
   "short_name": "ServiceManagement",
   "start_url": "/index.html"
