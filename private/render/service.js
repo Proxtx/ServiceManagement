@@ -1,7 +1,7 @@
 import { services } from "../services.js";
 
-export const server = async (document, req, res) => {
-  let service = services[req.cookies.service];
+export const server = async (document, options) => {
+  let service = services[options.req.cookies.service];
   if (!service) return;
   document.getElementById("path").innerText = service.service.path;
   document.getElementById("serviceName").innerText = service.service.name;
