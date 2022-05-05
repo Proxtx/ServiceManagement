@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Proxtx/ServiceManagement#readme",
   "dependencies": {
     "@proxtx/config": "^1.0.2",
-    "@proxtx/framework": "^1.3.8",
+    "@proxtx/framework": "^1.4.0",
     "node-fetch": "^3.2.1",
     "simple-git": "^3.2.6",
     "strip-color": "^0.1.0",
