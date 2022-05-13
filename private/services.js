@@ -164,6 +164,10 @@ class Service {
 
   getButtons = async () => {
     let buttons = ["Clear Logs"];
+    if (this.service.open) {
+      buttons.push("Open");
+    }
+
     if (this.service.combineInfo) {
       buttons.push("Edit Combine");
       for (let i of this.service.combineInfo) {
@@ -178,28 +182,33 @@ class Service {
 
   button = async (button) => {
     try {
-      if (button == "Clear Logs") {
-        if (this.process) this.process.log = "";
-        return { action: "redirect", data: "./" };
-      } else if (button == "Edit Combine") {
-        return { action: "redirect", data: "../combine" };
-      } else if (this.service.combineInfo) {
-        let split = button.split(" ");
-        let mod;
-        for (let i of this.service.combineInfo) {
-          if (i.name == split[0]) {
-            mod = i;
+      switch (button) {
+        case "Clear Logs":
+          if (this.process) this.process.log = "";
+          return { action: "redirect", data: "./" };
+        case "Open":
+          return { action: "redirect", data: this.service.open };
+        case "Edit Combine":
+          return { action: "redirect", data: "../combine" };
+        default:
+          if (this.service.combineInfo) {
+            let split = button.split(" ");
+            let mod;
+            for (let i of this.service.combineInfo) {
+              if (i.name == split[0]) {
+                mod = i;
+              }
+            }
+            let exportObj = mod.exports[split[1]];
+            return {
+              action: "display",
+              data: await this.runCombine(
+                mod.name,
+                split[1],
+                exportObj.arguments ? exportObj.arguments : []
+              ),
+            };
           }
-        }
-        let exportObj = mod.exports[split[1]];
-        return {
-          action: "display",
-          data: await this.runCombine(
-            mod.name,
-            split[1],
-            exportObj.arguments ? exportObj.arguments : []
-          ),
-        };
       }
     } catch (e) {
       console.log(e);
