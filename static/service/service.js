@@ -43,6 +43,9 @@ const callButtonFunction = async (button) => {
     case "display":
       window.displayInfo(result.data);
       break;
+    case "open":
+      window.open(result.data);
+      break;
   }
 };
 

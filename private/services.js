@@ -187,7 +187,7 @@ class Service {
           if (this.process) this.process.log = "";
           return { action: "redirect", data: "./" };
         case "Open":
-          return { action: "redirect", data: this.service.open };
+          return { action: "open", data: this.service.open };
         case "Edit Combine":
           return { action: "redirect", data: "../combine" };
         default:
