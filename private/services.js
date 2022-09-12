@@ -19,7 +19,7 @@ const addToLog = (log, service) => {
   )
     logs.push({
       name: service.service.name,
-      log: "",
+      log,
     });
   else {
     logs[logs.length - 1].log += log;
