@@ -22,3 +22,13 @@ export const pressButton = async (pwd, serviceName, button) => {
   if (!service) return;
   return await service.button(button);
 };
+
+export const serviceStatus = (pwd) => {
+  if (pwd != config.pwd) return;
+  let serviceStatus = [];
+  for (let service in services) {
+    serviceStatus.push({ service, active: Boolean(services[service].process) });
+  }
+
+  return serviceStatus;
+};
