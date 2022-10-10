@@ -15,6 +15,8 @@ Manage you services like node apps, python scripts or anything else with this pr
 
 # services.json attributes
 
+to create a service edit services.json. On the root json layer create an attribute with the name of the service. The value must be a json object containing the attributes path and run. There are more attributes you can add to your service: 
+
 - path: the working directory of the service (for example: /home/Dev/Node/redditDownloaderGUI/)
 - run: the command to run the service (for example: node .)
 - autoStart: bool start the service when service management is started
