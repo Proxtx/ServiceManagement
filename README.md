@@ -8,6 +8,7 @@ Manage you services like node apps, python scripts or anything else with this pr
 2. edit config.json with your own password and port
 3. optional: edit the style configuration in config.json to match your style (this is usefull to seperate different service managements on different servers)
 4. copy services.json.example to services.json and edit it (see `services.json attributes`)
+5. Go to 'static' and `git clone  https://github.com/ajaxorg/ace-builds`
 5. run npm i
 6. run node .
 7. open the port you specified
