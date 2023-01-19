@@ -67,7 +67,7 @@ class Service {
         if (res.summary.changes > 0 && this.process) {
           await this.process.kill();
           await new Promise((r) => setTimeout(r, 3000));
-          this.start();
+          if (!this.service.restart) this.start();
         }
       } catch (e) {
         console.log(e);
