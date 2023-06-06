@@ -39,7 +39,7 @@ class Process {
   }
 
   message = (message) => {
-    if (log.length > 100000) log = log.substring(50000);
+    if (this.log.length > 100000) this.log = this.log.substring(50000);
     this.log += message;
     this.events.evoke("log", message);
   };
