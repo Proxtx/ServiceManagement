@@ -1,3 +1,6 @@
+let url = new URL(location.href);
+const service = url.searchParams.get("service");
+
 const displayObject = (object) => {
   let obj = document.createElement("div");
   obj.setAttribute("class", "dataWrap");
@@ -73,14 +76,14 @@ const configWriteLoop = async () => {
   while (true) {
     if (prevConfigValue != configEditor.getValue()) {
       prevConfigValue = configEditor.getValue();
-      await server.writeConfig(cookie.pwd, cookie.service, prevConfigValue);
+      await server.writeConfig(cookie.pwd, service, prevConfigValue);
     }
     await new Promise((r) => setTimeout(r, 2000));
   }
 };
 
 document.getElementById("startStop").addEventListener("click", () => {
-  server.changeServiceStatus(cookie.pwd, cookie.service);
+  server.changeServiceStatus(cookie.pwd, service);
 });
 
 configWriteLoop();

@@ -1,4 +1,8 @@
 import { red, green } from "../colors.js";
+
+let url = new URL(location.href);
+export const service = url.searchParams.get("service");
+
 const statusCircle = document.getElementById("statusCircle");
 const startStop = document.getElementById("startStop");
 const buttonWrap = document.getElementById("buttons");
@@ -50,4 +54,3 @@ const callButtonFunction = async (button) => {
 };
 
 export const pwd = cookie.pwd;
-export const service = cookie.service;

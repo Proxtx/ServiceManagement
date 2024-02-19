@@ -12,8 +12,11 @@ export const servicesUpdate = (services) => {
       : red;
     serviceWidgetInstance.children[1].innerText = i.name;
     serviceWidgetInstance.addEventListener("click", () => {
-      cookie.service = i.name;
-      window.location = "./service";
+      let url = new URL(location.href);
+      url.searchParams.set("service", i.name);
+      url.pathname = "/service/";
+
+      window.location = url;
     });
     content.appendChild(serviceWidgetInstance);
   }
